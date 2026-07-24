@@ -174,8 +174,10 @@ section{position:relative}
 .mem:nth-child(3)::before{background-image:url("https://salonkee.cloud/lu/data/2115/marketingImages/n-P4JL81p7paPW59wmbzwXk-lg--opt")}
 .mem::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 28%,rgba(20,19,19,.92));z-index:1}
 .mem:hover::before{opacity:.9;transform:scale(1.05);filter:grayscale(0) contrast(1.05)}
-#mem-1::before{background-image:url("https://instagram.flux2-1.fna.fbcdn.net/v/t51.82787-15/602268136_17948921991079636_3376914667639168922_n.jpg?stp=dst-jpegr_e35_tt6&_nc_cat=102&ig_cache_key=Mzc5NDc1Nzk5MzI4MDEwMTg2MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5oZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=OXi0fboun1kQ7kNvwHHqQdb&_nc_oc=AdqgVkIspBI1OsxqDnyTc4_yXgGP_UCu0Zw3aW-9lrGF3gRtc-Djx1sandv-4B3MqWM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.flux2-1.fna&_nc_gid=ToF5Ey8BX8I6d1MIOABXGA&_nc_ss=7a22e&oh=00_AQBJMKIbggNehfo0jMvBAUvgkItEI3PyJkRcbsPJRJNXFg&oe=6A6912EF");opacity:.9;filter:grayscale(1) contrast(1.05);background-position:center 20%}
+#mem-1::before{background-image:url("/luxembourg.jpg");opacity:.9;filter:grayscale(1) contrast(1.05);background-position:center 22%}
 #mem-1:hover::before{opacity:1;filter:grayscale(0) contrast(1.02);transform:scale(1.05)}
+#mem-2::before{background-image:url("/foetz.jpg");opacity:.9;filter:grayscale(1) contrast(1.05);background-position:center 30%}
+#mem-2:hover::before{opacity:1;filter:grayscale(0) contrast(1.02);transform:scale(1.05)}
 .mem>*{position:relative;z-index:2}
 .mem .role{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--lav)}
 .mem .mname{font-weight:800;text-transform:uppercase;font-size:clamp(26px,3vw,40px);line-height:.9;letter-spacing:-.02em;margin-top:8px}
