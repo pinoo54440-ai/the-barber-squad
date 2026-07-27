@@ -120,6 +120,34 @@ footer a:hover{color:var(--ink)}
 .foot-links{display:flex;gap:18px;flex-wrap:wrap}
 @media(max-width:720px){.contact-wrap{grid-template-columns:1fr}}
 @media(max-width:600px){.top-right .ghost{display:none}.top-right{gap:10px}header.top{padding:12px var(--pad)}.brand small{letter-spacing:.24em}}
+/* hero photo */
+.hero{position:relative}
+.hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;opacity:.22;filter:grayscale(1) contrast(1.12);mix-blend-mode:luminosity;pointer-events:none}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 8%,rgba(20,19,19,.4) 55%,transparent);}
+/* card image */
+.fcard-img{position:relative;height:172px;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.05);transition:filter .45s ease,transform .45s ease}
+.fcard:hover .fcard-img{filter:grayscale(0) contrast(1)}
+.fcard-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,19,19,.15) 30%,var(--bg2))}
+.fcard-img .fcard-num{position:absolute;top:12px;right:16px;z-index:2;font-size:44px;font-weight:800;color:rgba(255,255,255,.28);line-height:1;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+.fcard:hover .fcard-img .fcard-num{color:var(--gold)}
+.fcard-body{padding:26px 28px 28px;display:flex;flex-direction:column;height:100%}
+/* salons band */
+.salons-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:clamp(34px,5vw,56px)}
+.salon-tile{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line)}
+.salon-tile .ph{position:absolute;inset:0;background-size:cover;background-position:center 20%;filter:grayscale(1) contrast(1.05);transition:filter .5s ease,transform .8s ease}
+.salon-tile:hover .ph{filter:grayscale(0);transform:scale(1.05)}
+.salon-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,19,19,.92),transparent 60%)}
+.salon-cap{position:absolute;left:24px;bottom:22px;z-index:2}
+.salon-cap .k{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--lav)}
+.salon-cap .n{font-size:clamp(26px,4vw,44px);font-weight:800;text-transform:uppercase;line-height:1}
+.salon-cap .a{font-size:13px;color:var(--muted);margin-top:4px}
+@media(max-width:640px){.salons-grid{grid-template-columns:1fr}}
+/* gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:clamp(30px,4vw,48px)}
+.gal-item{aspect-ratio:3/4;border-radius:12px;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.05);transition:filter .45s ease,transform .45s ease}
+.gal-item:hover{filter:grayscale(0);transform:translateY(-4px)}
+@media(max-width:900px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -133,6 +161,7 @@ footer a:hover{color:var(--ink)}
 </header>
 
 <div class="hero">
+  <div class="hero-photo" style="background-image:url('https://salonkee.cloud/lu/data/1699/coverImage/n-d7z60vNZeaqwg49k0VYjL-lg--opt')"></div>
   <div class="kicker"><span class="fr">The Barber Squad · Académie</span><span class="en">The Barber Squad · Academy</span></div>
   <h1><span class="fr">Apprends<br>le <span class="acc">métier</span></span><span class="en">Learn<br>the <span class="acc">craft</span></span></h1>
   <p class="hero-sub"><span class="fr">On ne t'apprend pas la théorie d'un livre. On te transmet ce qu'on fait tous les jours dans nos deux salons : le dégradé net, la barbe sculptée, le rasage propre et la posture d'un vrai barber. Des formations courtes, intensives, en petit groupe, à Luxembourg.</span><span class="en">We don't teach you theory from a book. We pass on what we do every day in our two shops: the clean fade, the sculpted beard, the sharp shave and the posture of a real barber. Short, intensive, small-group courses in Luxembourg.</span></p>
@@ -156,6 +185,17 @@ footer a:hover{color:var(--ink)}
   <div class="why-grid"><div class="why reveal"><h3><span class="fr">Formé par des barbers en activité</span><span class="en">Taught by working barbers</span></h3><p><span class="fr">On coupe tous les jours dans nos deux salons de Luxembourg-Ville et Foetz. Zéro théorie hors-sol : que du concret, testé sur le terrain.</span><span class="en">We cut every day in our two shops in Luxembourg City and Foetz. No abstract theory — only what works on the floor.</span></p></div><div class="why reveal"><h3><span class="fr">Petits groupes, pratique intensive</span><span class="en">Small groups, intensive practice</span></h3><p><span class="fr">Des sessions à effectif réduit et beaucoup de pratique sur modèles, pour que chaque geste soit corrigé en direct.</span><span class="en">Small cohorts and lots of hands-on practice on models, so every move is corrected on the spot.</span></p></div><div class="why reveal"><h3><span class="fr">Techniques actuelles</span><span class="en">Up-to-date techniques</span></h3><p><span class="fr">Fade à blanc, contours au rasoir, barbe sculptée : les techniques que les clients demandent vraiment aujourd'hui.</span><span class="en">Skin fades, razor line-ups, sculpted beards: the techniques clients actually ask for today.</span></p></div><div class="why reveal"><h3><span class="fr">Attestation &amp; suivi</span><span class="en">Certificate &amp; follow-up</span></h3><p><span class="fr">Une attestation de fin de formation, et un suivi après le stage pour t'aider à progresser dans ton salon.</span><span class="en">A completion certificate, plus follow-up after the course to keep you progressing in your own shop.</span></p></div></div>
 </section>
 
+<section id="salons">
+  <div class="sec-h"><span class="fr">Où tu apprends</span><span class="en">Where you learn</span></div>
+  <h2 class="sec-t"><span class="fr">Deux vrais <span class="acc">salons</span>-écoles</span><span class="en">Two real <span class="acc">shop</span>-schools</span></h2>
+  <div class="salons-grid">
+    <div class="salon-tile reveal"><div class="ph" style="background-image:url('/luxembourg.jpg')"></div>
+      <div class="salon-cap"><div class="k">Luxembourg-Ville · Gasperich</div><div class="n">Ville</div><div class="a">147, route d'Esch</div></div></div>
+    <div class="salon-tile reveal"><div class="ph" style="background-image:url('/foetz.jpg');background-position:center 30%"></div>
+      <div class="salon-cap"><div class="k">Foetz · Mondercange</div><div class="n">Foetz</div><div class="a">10, rue de l'Avenir</div></div></div>
+  </div>
+</section>
+
 <section id="formations">
   <div class="forms-head">
     <div>
@@ -165,7 +205,7 @@ footer a:hover{color:var(--ink)}
     <a class="ghost" href="#contact"><span class="fr">Besoin d'un conseil ?</span><span class="en">Need guidance?</span></a>
   </div>
   <div class="forms"><article class="fcard reveal">
-      <div class="fcard-num">01</div>
+      <div class="fcard-img" style="background-image:url('https://salonkee.cloud/lu/data/1699/marketingImages/n-d7z60vNZeaXDJ46D0VYjL-lg--opt')"><span class="fcard-num">01</span></div>
       <div class="fcard-body">
         <h3 class="fcard-title"><span class="fr">Le Dégradé Signature</span><span class="en">The Signature Fade</span></h3>
         <p class="fcard-tag"><span class="fr">Fade 0 &amp; contours au rasoir</span><span class="en">Skin fade &amp; razor line-ups</span></p>
@@ -184,7 +224,7 @@ footer a:hover{color:var(--ink)}
         </div>
       </div>
     </article><article class="fcard reveal">
-      <div class="fcard-num">02</div>
+      <div class="fcard-img" style="background-image:url('https://salonkee.cloud/lu/data/2115/marketingImages/n-P4JL81p7pa9vOmajbzwXk-lg--opt')"><span class="fcard-num">02</span></div>
       <div class="fcard-body">
         <h3 class="fcard-title"><span class="fr">Coupe Homme &amp; Ciseaux</span><span class="en">Men's Cut &amp; Scissor Work</span></h3>
         <p class="fcard-tag"><span class="fr">Structure, texture &amp; morphologie</span><span class="en">Structure, texture &amp; face shape</span></p>
@@ -203,7 +243,7 @@ footer a:hover{color:var(--ink)}
         </div>
       </div>
     </article><article class="fcard reveal">
-      <div class="fcard-num">03</div>
+      <div class="fcard-img" style="background-image:url('https://salonkee.cloud/lu/data/1699/marketingImages/n-d7z60vNZeaLeJ2k10VYjL-lg--opt')"><span class="fcard-num">03</span></div>
       <div class="fcard-body">
         <h3 class="fcard-title"><span class="fr">Rasage &amp; Taille de Barbe</span><span class="en">Shaving &amp; Beard Craft</span></h3>
         <p class="fcard-tag"><span class="fr">Coupe-chou, serviette chaude &amp; contours</span><span class="en">Straight razor, hot towel &amp; lines</span></p>
@@ -222,7 +262,7 @@ footer a:hover{color:var(--ink)}
         </div>
       </div>
     </article><article class="fcard reveal">
-      <div class="fcard-num">04</div>
+      <div class="fcard-img" style="background-image:url('https://salonkee.cloud/lu/data/2115/marketingImages/n-P4JL81p7paPW59wmbzwXk-lg--opt')"><span class="fcard-num">04</span></div>
       <div class="fcard-body">
         <h3 class="fcard-title"><span class="fr">Barber Prestige</span><span class="en">Barber Prestige</span></h3>
         <p class="fcard-tag"><span class="fr">Le parcours complet · signature</span><span class="en">The complete signature path</span></p>
@@ -241,7 +281,7 @@ footer a:hover{color:var(--ink)}
         </div>
       </div>
     </article><article class="fcard reveal">
-      <div class="fcard-num">05</div>
+      <div class="fcard-img" style="background-image:url('https://salonkee.cloud/lu/data/1699/marketingImages/n-d7z60vNZeaPm7gk10VYjL-lg--opt')"><span class="fcard-num">05</span></div>
       <div class="fcard-body">
         <h3 class="fcard-title"><span class="fr">Coiffeur → Barber</span><span class="en">Hairdresser → Barber</span></h3>
         <p class="fcard-tag"><span class="fr">La reconversion vers le barbering</span><span class="en">The switch into barbering</span></p>
@@ -260,7 +300,7 @@ footer a:hover{color:var(--ink)}
         </div>
       </div>
     </article><article class="fcard reveal">
-      <div class="fcard-num">06</div>
+      <div class="fcard-img" style="background-image:url('https://salonkee.cloud/lu/data/2115/marketingImages/n-P4JL81p7paw4W91mbzwXk-lg--opt')"><span class="fcard-num">06</span></div>
       <div class="fcard-body">
         <h3 class="fcard-title"><span class="fr">Formation en ligne</span><span class="en">Online Course</span></h3>
         <p class="fcard-tag"><span class="fr">À ton rythme, où que tu sois</span><span class="en">At your own pace, anywhere</span></p>
@@ -285,6 +325,19 @@ footer a:hover{color:var(--ink)}
   <div class="sec-h"><span class="fr">La méthode</span><span class="en">The method</span></div>
   <h2 class="sec-t"><span class="fr">Comment se passe une <span class="acc">journée</span></span><span class="en">How a <span class="acc">day</span> unfolds</span></h2>
   <div class="steps"><div class="step reveal"><div class="step-n">01</div><h4><span class="fr">Ton niveau &amp; tes objectifs</span><span class="en">Your level &amp; goals</span></h4><p><span class="fr">On fait le point sur ton expérience et ce que tu veux maîtriser.</span><span class="en">We map out your experience and what you want to master.</span></p></div><div class="step reveal"><div class="step-n">02</div><h4><span class="fr">La démonstration</span><span class="en">The demonstration</span></h4><p><span class="fr">Le formateur exécute la technique devant toi, geste par geste.</span><span class="en">The trainer performs the technique in front of you, move by move.</span></p></div><div class="step reveal"><div class="step-n">03</div><h4><span class="fr">La pratique corrigée</span><span class="en">Guided practice</span></h4><p><span class="fr">À toi de jouer sur modèle, avec une correction en direct.</span><span class="en">Your turn on a model, corrected live.</span></p></div><div class="step reveal"><div class="step-n">04</div><h4><span class="fr">Feedback &amp; attestation</span><span class="en">Feedback &amp; certificate</span></h4><p><span class="fr">Un retour personnalisé, tes axes de progrès et ton attestation.</span><span class="en">Personal feedback, your next steps and your certificate.</span></p></div></div>
+</section>
+
+<section id="gallery">
+  <div class="sec-h"><span class="fr">Le travail</span><span class="en">The work</span></div>
+  <h2 class="sec-t"><span class="fr">Ce que tu vas savoir <span class="acc">faire</span></span><span class="en">What you'll be able to <span class="acc">do</span></span></h2>
+  <div class="gal-grid">
+    <div class="gal-item reveal" style="background-image:url('https://salonkee.cloud/lu/data/1699/marketingImages/n-d7z60vNZeayRaykn0VYjL-lg--opt')"></div>
+    <div class="gal-item reveal" style="background-image:url('https://salonkee.cloud/lu/data/2115/marketingImages/n-P4JL81p7pa3jPY4qbzwXk-lg--opt')"></div>
+    <div class="gal-item reveal" style="background-image:url('https://salonkee.cloud/lu/data/1699/marketingImages/n-d7z60vNZe1R5Ry2B0VYjL-lg--opt')"></div>
+    <div class="gal-item reveal" style="background-image:url('https://salonkee.cloud/lu/data/1699/marketingImages/n-d7z60vNZea9DXrD10VYjL-lg--opt')"></div>
+    <div class="gal-item reveal" style="background-image:url('https://salonkee.cloud/lu/data/2115/marketingImages/n-P4JL81p7pa9vOmajbzwXk-lg--opt')"></div>
+    <div class="gal-item reveal" style="background-image:url('https://salonkee.cloud/lu/data/2115/marketingImages/n-P4JL81p7paPW59wmbzwXk-lg--opt')"></div>
+  </div>
 </section>
 
 <section id="contact">
